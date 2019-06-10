@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
+
+main {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1rem;
+}
+.font1x {
+    font-size: 1.1rem;
+}

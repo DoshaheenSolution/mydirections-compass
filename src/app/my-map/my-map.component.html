@@ -1,0 +1,7 @@
+  <div class="alert alert-info text-center font1x" *ngIf="dirExist">
+    <i class="fa fa-compass fa-lg pr-2" aria-hidden="true"></i>Dear user your direction of movement is
+    <span class="badge badge-info">{{finalCompassDirection}}</span>
+  </div>
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="14" [usePanning]="true">
+    <agm-marker *ngFor="let m of mappingPoints" [latitude]=m.lat [longitude]=m.lng></agm-marker>
+  </agm-map>

@@ -1,0 +1,22 @@
+<ng-container *ngIf="isBrowser">
+  <main class="container my-4">
+    <div class="card mt-3">
+      <h5 class="card-header bg-info text-white text-center">Welcome to My Direction Compass Application.</h5>
+      <div class="card-body">
+        <div class="input-group mb-3">
+          <div class="custom-file">
+            <input type="file" accept=".csv" (change)="handleFileSelect($event)" class="custom-file-input bg-primary text-white" id="inputGroupFile02">
+            <label class="custom-file-label" for="inputGroupFile02">Choose CSV file with your GPS cordinates to predict direction of movement.</label>
+          </div>
+          <div class="input-group-append">
+            <button (click)=loadMapMarkers() [disabled]=!isMapMe class="input-group-text bg-info text-white" id="">
+              <i class="fa fa-map-marker fa-lg pr-2"></i>
+              Map me!</button>
+          </div>
+        </div>
+        <p class="alert alert-danger" *ngIf="errMsg">{{errMsg}}</p>
+        <app-my-map [mappingPoints]="markerDataPlot"></app-my-map>
+      </div>
+    </div>
+  </main>
+</ng-container>
